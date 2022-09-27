@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Insert New Records</title>
+</head>
+<body>
+    <h1>Memasukkan record baru</h1>
+    <h2>Tabel Pegawai</h2>
+    <hr/>
+    <form method="post">
+        {% csrf_token %}
+        Employee Name : <input type="text" placeholder="Enter employee name" name="empName" required autocomplete="off"><br/>
+        Email : <input type="text" placeholder="Enter email address" name="empEmail" required autocomplete="off"><br/>
+        Country : <input type="text" placeholder="Enter country name" name="empCountry" required><br/>
+        <input type="Submit" value="Insert record" />
+        {% if messages %}
+        {% for message in messages %}
+        <h2 style="color:green">{{ message }}</h2>
+        {% endfor %} 
+        {% endif %}
+    </form>
+</body>
+</html>
