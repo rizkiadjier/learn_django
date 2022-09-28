@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Index</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static '/style.css' %}" />
+    </head>
+    <body>
+        <form method="POST" class="post-form" action="/emp">
+            {% csrf_token %}
+            <div class="container">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Enter Details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Employee Id:</label>
+                <div class="col-sm-4">{{ form.eId }}</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Employee name:</label>
+                <div class="col-sm-4">{{ form.eName }}</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Employee email:</label>
+                <div class="col-sm-4">{{ form.eEmail }}</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Employee contact:</label>
+                <div class="col-sm-4">{{ form.eContact }}</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>
